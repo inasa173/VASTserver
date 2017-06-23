@@ -1,0 +1,2 @@
+class Cuepoint < ApplicationRecord
+end
