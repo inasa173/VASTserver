@@ -1,0 +1,2 @@
+class CuepointsController < ApplicationController
+end

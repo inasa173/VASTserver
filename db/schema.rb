@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170623061426) do
 
-  create_table "campains", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "start_at"
     t.datetime "end_at"

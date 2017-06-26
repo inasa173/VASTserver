@@ -1,0 +1,30 @@
+<h1>id = <%= @campaign.id %> のキャンペーン詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @campaign.id %></td>
+  </tr>
+  <tr>
+    <th>name</th>
+    <td><%= @campaign.name %></td>
+  </tr>
+  <tr>
+    <th>start_at</th>
+    <td><%= @campaign.start_at %></td>
+  </tr>
+  <tr>
+    <th>end_at</th>
+    <td><%= @campaign.end_at %></td>
+  </tr><tr>
+    <th>limit_start</th>
+    <td><%= @campaign.limit_start %></td>
+  </tr>
+  <tr>
+    <th>movie_url</th>
+    <td><%= @campaign.movie_url %></td>
+  </tr>
+</table>
+
+<%= link_to "キャンペーンを編集する", edit_campaign_path(@campaign), class: "btn btn-default" %>
+<%= link_to 'このキャンペーンを削除する', @campaign, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "btn btn-danger" %>

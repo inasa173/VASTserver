@@ -1,6 +1,6 @@
-class CreateCampains < ActiveRecord::Migration[5.0]
+class CreateCampaigns < ActiveRecord::Migration[5.0]
   def change
-    create_table :campains do |t|
+    create_table :campaigns do |t|
       t.string :name
       t.datetime :start_at
       t.datetime :end_at

@@ -1,0 +1,33 @@
+<h1>キャンペーン一覧</h1>
+  
+<% if @campaigns.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th></th>
+        <th>start_at</th>
+        <th>end_at</th>
+        <th>limit_start</th>
+        <th>movie_url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaigns.each do |campaign| %>
+        <tr>
+          <td><%= link_to campaign.id, campaign %></td>
+          <td><%= campaign.name %></td>
+          <td><%= campaign.start_at %></td>
+          <td><%= campaign.end_at %></td>
+          <td><%= campaign.limit_start %></td>
+          <td><%= campaign.movie_url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @campaigns %>
+  </div>
+<% end %>
+
+<%= link_to '新規キャンペーンの作成', new_campaign_path, class: "btn btn-primary" %>

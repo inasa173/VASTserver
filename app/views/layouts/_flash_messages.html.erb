@@ -1,0 +1,5 @@
+<% flash.each do |campaign_type, message| %>
+  <div class = 'alert alert-<%= campaign_type %> ' >
+    <%= message %>
+  </div>
+<% end %>
