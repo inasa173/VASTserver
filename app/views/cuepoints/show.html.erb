@@ -1,0 +1,24 @@
+<h1>id = <%= @cuepoint.id %> のキューポイント詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @cuepoint.id %></td>
+  </tr>
+  <tr>
+    <th>name</th>
+    <td><%= @cuepoint.name %></td>
+  </tr>
+  <tr>
+    <th>created_at</th>
+    <td><%= @cuepoint.created_at %></td>
+  </tr>
+  <tr>
+    <th>updated_at</th>
+    <td><%= @cuepoint.updated_at %></td>
+  </tr>
+</table>
+
+<%= link_to "戻る", cuepoints_path(@cuepoint), class: "btn btn-default" %>
+<%= link_to "キューポイントを編集する", edit_cuepoint_path(@cuepoint), class: "btn btn-default" %>
+<%= link_to 'このキューポイントを削除する', @cuepoint, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "btn btn-danger" %>

@@ -1,0 +1,27 @@
+<h1>キューポイント一覧</h1>
+  
+<% if @cuepoints.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th></th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cuepoints.each do |cuepoint| %>
+        <tr>
+          <td><%= link_to cuepoint.id, cuepoint %></td>
+          <td><%= cuepoint.name %></td>
+          <td><%= cuepoint.created_at %></td>
+          <td><%= cuepoint.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <%= paginate @cuepoints %>
+<% end %>
+
+<%= link_to '新規キューポイントの作成', new_cuepoint_path, class: "btn btn-primary" %>
