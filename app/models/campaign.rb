@@ -15,4 +15,6 @@ class Campaign < ApplicationRecord
                            }
 
   validates :movie_url, length: { maximum: 100, minimum: 5 }
+
+  has_many :cuepoints
 end

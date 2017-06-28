@@ -44,6 +44,11 @@ class CuepointsController < ApplicationController
     redirect_to cuepoints_url
   end
 
+  # def _cuepoints_name
+  #   @cuepoint = Cuepoint.new
+  # @cuepoints = Cuepoint.select(:name).distinct
+  # end
+
   private
 
   def set_cuepoint

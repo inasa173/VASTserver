@@ -1,0 +1,7 @@
+ue
+<div class="row">
+  <%= collection_check_boxes (:name) do |f| %>
+    <%= f.label { f.check_box + f.name } %>
+    <%= f.check_box :@cuepoint %>
+  <% end %>
+</div>

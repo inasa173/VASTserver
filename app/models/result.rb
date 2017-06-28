@@ -1,4 +1,6 @@
 class Result < ApplicationRecord
+  belongs_to :campaign
+  belongs_to :cuepoint
 
   validates :count_start,
             :count_end, numericality: {
@@ -7,4 +9,6 @@ class Result < ApplicationRecord
                         } 
   validates :campaign_id,
             :cuepoint_id, presence: true
+  
+  has_many :cuepoints
 end

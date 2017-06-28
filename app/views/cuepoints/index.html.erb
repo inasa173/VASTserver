@@ -1,4 +1,5 @@
 <h1>キューポイント一覧</h1>
+<%= link_to '登録', new_cuepoint_path, class: "btn btn-primary" %>
   
 <% if @cuepoints.any? %>
   <table class="table table-striped">
@@ -24,4 +25,3 @@
     <%= paginate @cuepoints %>
 <% end %>
 
-<%= link_to '新規キューポイントの作成', new_cuepoint_path, class: "btn btn-primary" %>

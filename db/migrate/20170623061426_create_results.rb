@@ -6,6 +6,9 @@ class CreateResults < ActiveRecord::Migration[5.0]
       t.integer :count_start
       t.integer :count_end
 
+      t.references :campaign, foreign_key: true
+      t.references :cuepoint, foreign_key: true
+
       t.timestamps
     end
   end

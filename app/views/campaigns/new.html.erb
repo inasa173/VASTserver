@@ -1,22 +1,3 @@
 <h1>キャンペーン新規登録</h1>
+<%= render "form", campaign: @campaign %>
 
-<%= form_for(@campaign) do |f| %>
-  <%= f.label :name, 'name' %>
-  <%= f.text_field :name %>
-  
-  <%= f.label :start_at, 'start_at' %>
-  <%= f.text_field :start_at %>
-  
-  <%= f.label :end_at, 'end_at' %>
-  <%= f.text_field :end_at %>
-  
-  <%= f.label :limit_start, 'limit_start' %>
-  <%= f.text_field :limit_start %>
-  
-  <%= f.label :movie_url, 'movie_url' %>
-  <%= f.text_field :movie_url %>
-  
-  <%= f.submit 'submit' %>
-<% end %>
-
-<%= link_to 'return', root_path %>

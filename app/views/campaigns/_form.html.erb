@@ -18,12 +18,12 @@
 
       <div class="form-group">
         <%= f.label :start_at, 'start_at' %>
-        <%= f.text_field :start_at, class: 'form-control' %>
+        <%= f.datetime_field :start_at, class: 'form-control' %>
       </div>
     
       <div class="form-group">
         <%= f.label :end_at, 'end_at' %>
-        <%= f.text_field :end_at, class: 'form-control' %>
+        <%= f.datetime_field :end_at, class: 'form-control' %>
       </div>
       
       <div class="form-group">
@@ -33,9 +33,20 @@
       
       <div class="form-group">
         <%= f.label :movie_url, 'movie_url' %>
-        <%= f.text_field :movie_url, class: 'form-control' %>
+        <%= f.url_field :movie_url, class: 'form-control' %>
       </div>
+
+
+       <div class="form-group">
+        <%= f.label :cuepoint, 'cuepoint' %>
+        <div class="field">
+          <%= render 'cuepoints/cuepoint_name', :locals=>{:f=>f}  %> 
+        </div>
+      </div>
+     
+
       <%= f.submit '投稿', class: 'btn btn-primary' %>
+      <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-danger'), root_path %>
     <% end %>
   </div>
 </div>
