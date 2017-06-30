@@ -9,6 +9,4 @@ class Result < ApplicationRecord
                         } 
   validates :campaign_id,
             :cuepoint_id, presence: true
-  
-  has_many :cuepoints
 end

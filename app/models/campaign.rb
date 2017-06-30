@@ -19,4 +19,6 @@ class Campaign < ApplicationRecord
 
   has_many :cam_cues, dependent: :destroy
   has_many :cuepoints, through: :cam_cues
+  has_many :results, dependent: :destroy
+  has_many :cuepoints, through: :results
 end

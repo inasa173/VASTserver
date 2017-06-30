@@ -6,4 +6,6 @@ class Cuepoint < ApplicationRecord
                    
   has_many :cam_cues, dependent: :destroy
   has_many :campaigns, through: :cam_cues
+  has_many :results, dependent: :destroy
+  has_many :campaigns, through: :results
 end
