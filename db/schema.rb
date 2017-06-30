@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170628054534) do
   create_table "cam_cues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "campaign_id"
     t.integer "cuepoint_id"
+    t.index ["campaign_id", "cuepoint_id"], name: "index_cam_cues_on_campaign_id_and_cuepoint_id", unique: true, using: :btree
     t.index ["campaign_id"], name: "index_cam_cues_on_campaign_id", using: :btree
     t.index ["cuepoint_id"], name: "index_cam_cues_on_cuepoint_id", using: :btree
   end

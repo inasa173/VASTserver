@@ -20,5 +20,4 @@
 </table>
 
 <%= link_to "戻る", cuepoints_path(@cuepoint), class: "btn btn-default" %>
-<%= link_to "キューポイントを編集する", edit_cuepoint_path(@cuepoint), class: "btn btn-default" %>
-<%= link_to 'このキューポイントを削除する', @cuepoint, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "btn btn-danger" %>
+<%= link_to "編集", edit_cuepoint_path(@cuepoint), class: "btn btn-default" %>

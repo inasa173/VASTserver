@@ -1,7 +1,8 @@
-<% @cuepoint = Cuepoint.new unless @cuepoint %>
-<% @cuepoints = Cuepoint.select(:name).distinct unless @cuepoints %>
+<!--<%# @cuepoint = Cuepoint.new unless @cuepoint %>-->
+<!--<%# @cuepoints = Cuepoint.select(:name).distinct unless @cuepoints %>-->
 <div class="row">
   <%= form_for (@cuepoint) do |f| %>
-    <%= f.collection_check_boxes(:name, @cuepoints, :name, :name) %>
+    <%= collection_check_boxes(:post, :name, @cuepoints.all, :id, :name)  %>
+    
   <% end %>
 </div>

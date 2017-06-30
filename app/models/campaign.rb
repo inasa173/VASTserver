@@ -1,4 +1,5 @@
 class Campaign < ApplicationRecord
+  
   validates :name, presence: true, 
                    length: { maximum: 20, minimum: 5 },
                    uniqueness: { case_sensitive: false }
@@ -16,5 +17,6 @@ class Campaign < ApplicationRecord
 
   validates :movie_url, length: { maximum: 100, minimum: 5 }
 
-  has_many :cuepoints
+  has_many :cam_cues, dependent: :destroy
+  has_many :cuepoints, through: :cam_cues
 end

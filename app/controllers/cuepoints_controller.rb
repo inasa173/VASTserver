@@ -3,6 +3,7 @@ class CuepointsController < ApplicationController
 
   def index
     @cuepoints = Cuepoint.order(created_at: :DESC).page(params[:page]).per(10)
+    @cuepoint = Cuepoint.new
   end
 
   def show
@@ -28,9 +29,10 @@ class CuepointsController < ApplicationController
   end
 
   def update
+#    @cam_cue = Cam_cue.new(:id, :name)
     if @cuepoint.update(cuepoint_params)
       flash[:success] = 'Cuepoint は正常に更新されました'
-      redirect_to @cuepoint
+      redirect_to @cuepoint #@cam_cue
     else
       flash.now[:danger] = 'Cuepoint は更新されませんでした'
       render :edit
@@ -40,6 +42,9 @@ class CuepointsController < ApplicationController
   def destroy
     @cuepoint.destroy
 
+    # respond_to do |f|
+    #   f.html {redirect_to cuepoints_url, notice: '本当に削除しますか？' }
+    # end
     flash[:success] = 'Cuepoint は正常に削除されました'
     redirect_to cuepoints_url
   end

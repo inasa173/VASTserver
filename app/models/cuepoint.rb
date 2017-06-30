@@ -1,6 +1,9 @@
-class Cuepoint < ApplicationRecord
+class Cuepoint < ApplicationRecord  
 
   validates :name, presence: true,
                    length: { maximum: 20, minimum: 5 },
                    uniqueness: { case_sensitive: false }
+                   
+  has_many :cam_cues, dependent: :destroy
+  has_many :campaigns, through: :cam_cues
 end
