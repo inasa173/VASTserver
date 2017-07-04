@@ -1,12 +1,18 @@
 class CampaignsController < ApplicationController
 
   def index
-    @campaigns = Campaign.order(created_at: :DESC).page(params[:page]).per(10)
-    response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
-    response.headers['Access-Control-Allow-Methods'] = 'GET'
-    headers['Access-Control-Request-Method'] = '*'
-    headers['Access-Control-Allow-Credentials'] = 'true'
-    headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type'
+    if params[:cuepoint_id]
+      @cuepoint = Cuepoint.find(params[:cuepoint_id])
+      @campaigns = Campaign.current_avaliable(@cuepoint)
+      response.headers['Access-Control-Allow-Origin'] = request.headers['Origin'] || '*'
+      response.headers['Access-Control-Allow-Methods'] = 'GET'
+      headers['Access-Control-Request-Method'] = '*'
+      headers['Access-Control-Allow-Credentials'] = 'true'
+      headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type'
+    else
+      @campaigns = Campaign.order(created_at: :DESC).page(params[:page]).per(10)
+      #redirect_to edit_cuepoint_path(@cuepoint)
+    end
   end
   
   def show
@@ -26,6 +32,7 @@ class CampaignsController < ApplicationController
       flash[:success] = 'campaignを登録しました'
       redirect_to campaigns_url
     else
+      @cuepoints = Cuepoint.all
       flash.now[:danger] = '登録に失敗しました'
       render :new
     end

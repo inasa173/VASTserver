@@ -10,20 +10,12 @@
             <Duration>00:00:15</Duration>
             <MediaFiles>
               <MediaFile delivery="progressive" type="video/mp4">
-                <![CDATA[ <% http://img.ak.impact-ad.jp/pp/vfiles/dac_demo_eye.mp4 %> ]]>
+                <![CDATA[ <%= campaign.movie_url %>]]>
               </MediaFile>
             </MediaFiles>
             <TrackingEvents>
-              <Tracking event="start">
-                <![CDATA[ 
-                  <% http://xxxxxx.com/log/p.gif?6=25946;a=2215590;n=2592;c=2592000035;s=0;x=4928;g=84;m=6;w=3;1=8;os=9;2=6;z=0.9177278488830444;pu=;ru=;e=e; %>
-                ]]>
-              </Tracking>
-              <Tracking event="complete">
-                <![CDATA[ 
-                  <% http://xxxxx.com/log/p.gif?6=25468;a=2215590;n=2592;c=2592000035;s=0;x=4928;g=84;m=6;w=3;1=8;os=9;2=6;z=0.1331810786302503;pu=;ru=;e=e; %> 
-                 ]]>
-              </Tracking>
+              <Tracking event="start"><![CDATA[ <%= raw(track_url(campaign, @cuepoint, 'start')) %>]]></Tracking>
+              <Tracking event="complete"><![CDATA[ <%= raw(track_url(campaign, @cuepoint, 'complete')) %>]]></Tracking>
             </TrackingEvents>
           </Linear>
         </Creative>

@@ -4,8 +4,7 @@ class Cuepoint < ApplicationRecord
                    length: { maximum: 20, minimum: 5 },
                    uniqueness: { case_sensitive: false }
                    
-  has_many :cam_cues, dependent: :destroy
-  has_many :campaigns, through: :cam_cues
-  has_many :results, dependent: :destroy
-  has_many :campaigns, through: :results
+  has_and_belongs_to_many :campaigns
+  # has_many :results, dependent: :destroy
+  # has_many :campaigns, through: :results
 end
