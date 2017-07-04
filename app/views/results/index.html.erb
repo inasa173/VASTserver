@@ -1,29 +1,27 @@
 <h1>Results#index</h1>
 
-<% if @results.any? %>
-  <table class="table table-striped" >
-    <thead>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>campaign_id</th>
+      <th>campaing_name</th>
+      <th>cuepoint_id</th>
+      <th>cuepoint_name</th>
+      <th>開始数</th>
+      <th>完了数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
       <tr>
-        <th>campaign_id</th>
-        <th>campaing_name</th>
-        <th>cuepoint_id</th>
-        <th>cuepoint_name</th>
-        <th>開始数</th>
-        <th>完了数</th>
+        <td><%= result.campaign_id %></td>
+        <td><%= result.campaign.name %></td>
+        <td><%= result.cuepoint_id %></td>
+        <td><%= result.cuepoint.name %></td>
+        <td><%= result.count_start %></td>
+        <td><%= result.count_complete %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @results.each do |result| %>
-        <tr>
-          <td><%= campaign.id %></td>
-          <td><%= campaign.name %></td>
-          <td><%= cuepoint.id %></td>
-          <td><%= cuepoint.name %></td>
-          <td><%= count_start %></td>
-          <td><%= count_end %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= paginate @results %>
-<% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @results %>

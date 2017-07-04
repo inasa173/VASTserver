@@ -18,6 +18,7 @@ class Campaign < ApplicationRecord
   validates :movie_url, length: { maximum: 100, minimum: 5 }
 
   has_and_belongs_to_many :cuepoints
+  has_many :results
   # has_many :results, dependent: :destroy
   # has_many :cuepoints, through: :results
   

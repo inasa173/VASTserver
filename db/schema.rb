@@ -39,13 +39,11 @@ ActiveRecord::Schema.define(version: 20170629054344) do
     t.integer  "campaign_id"
     t.integer  "cuepoint_id"
     t.integer  "count_start"
-    t.integer  "count_end"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "count_complete"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["campaign_id"], name: "index_results_on_campaign_id", using: :btree
     t.index ["cuepoint_id"], name: "index_results_on_cuepoint_id", using: :btree
   end
 
-  add_foreign_key "results", "campaigns"
-  add_foreign_key "results", "cuepoints"
 end
