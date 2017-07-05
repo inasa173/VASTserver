@@ -45,7 +45,7 @@ class CampaignsController < ApplicationController
   
   def update
     @campaign = Campaign.find(params[:id])
-    if @campaign.update(campaign_params) || @cuepoint.update(cuepoint_params)
+    if @campaign.update(campaign_params)
       flash[:success] = 'キャンペーンを更新しました'
       redirect_to campaigns_url
     else

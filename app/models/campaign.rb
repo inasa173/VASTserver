@@ -9,11 +9,11 @@ class Campaign < ApplicationRecord
             
 
   validates :limit_start, presence: true,
-                         numericality: { 
-                           only_integer: true,
-                          greater_than_equal_to: 0,
-                          less_than_equal_to: 10000
-                           }
+                          numericality: { 
+                            only_integer: true,
+                            greater_than: 0,
+                            less_than_or_equal_to: 10000
+                          }
 
   validates :movie_url, length: { maximum: 100, minimum: 5 }
 
