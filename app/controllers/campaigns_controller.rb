@@ -15,9 +15,9 @@ class CampaignsController < ApplicationController
     end
   end
   
-  def show
-    @campaign = Campaign.find(params[:id])
-  end
+  # def show
+  #   @campaign = Campaign.find(params[:id])
+  # end
   
   def new
     @campaign = Campaign.new

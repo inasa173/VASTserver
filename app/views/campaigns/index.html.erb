@@ -16,7 +16,7 @@
     <tbody>
       <% @campaigns.each do |campaign| %>
         <tr>
-          <td><%= link_to campaign.id, campaign %></td>
+          <td><%= link_to campaign.id, edit_campaign_path(campaign) %></td>
           <td><%= campaign.name %></td>
           <td><%= campaign.start_at %></td>
           <td><%= campaign.end_at %></td>

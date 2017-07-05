@@ -14,7 +14,7 @@
     <tbody>
       <% @cuepoints.each do |cuepoint| %>
         <tr>
-          <td><%= link_to cuepoint.id, cuepoint %></td>
+          <td><%= link_to cuepoint.id, edit_cuepoint_path(cuepoint) %></td>
           <td><%= cuepoint.name %></td>
           <td><%= cuepoint.created_at %></td>
           <td><%= cuepoint.updated_at %></td>

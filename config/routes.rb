@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'campaigns#index'
 
-  resources :campaigns
+  resources :campaigns, only: [:index, :new, :edit, :create, :destroy, :update] 
   resources :cuepoints do
     resources :campaigns, only: :index
   end

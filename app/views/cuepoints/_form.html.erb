@@ -16,11 +16,13 @@
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :name, 'VAST URL' %>
+        <%= f.label :url, 'VAST URL' %><p>
+           <%= link_to vast_url(@cuepoint), vast_url(@cuepoint), target: '_blank' %>
+        </p>
       </div>
 
       <%= f.submit '保存', class: 'btn btn-primary' %>
-      <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-danger'), cuepoints_path %>
+      <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-warning'), cuepoints_path %>
 <%= link_to (button_tag "削除", type: 'button', class: 'btn btn-danger'), @cuepoint, method: :delete, data: {confirm: '本当に削除しますか？'} %>
 
     <% end %>

@@ -44,7 +44,8 @@
       </div>
 
       <%= f.submit '投稿', class: 'btn btn-primary' %>
-      <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-danger'), root_path %>
+      <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-warning'), root_path %>
+      <%= link_to (button_tag "削除", type: 'button', class: 'btn btn-danger'), @campaign, method: :delete, data: {confirm: '本当に削除しますか？'} %>
     <% end %>
   </div>
 </div>
