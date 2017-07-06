@@ -43,9 +43,11 @@
         <% end %>
       </div>
 
-      <%= f.submit '投稿', class: 'btn btn-primary' %>
+      <%= f.submit '登録', class: 'btn btn-primary' %>
       <%= link_to (button_tag "中止", type: 'button', class: 'btn btn-warning'), root_path %>
-      <%= link_to (button_tag "削除", type: 'button', class: 'btn btn-danger'), @campaign, method: :delete, data: {confirm: '本当に削除しますか？'} %>
+      <% if params[:action] == "edit" || params[:action] == "update" %>
+        <%= link_to (button_tag "削除", type: 'button', class: 'btn btn-danger'), @campaign, method: :delete, data: {confirm: '本当に削除しますか？'} %>
+      <% end %>
     <% end %>
   </div>
 </div>
